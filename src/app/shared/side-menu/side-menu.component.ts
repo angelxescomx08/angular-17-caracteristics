@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { routes } from '../../app.routes';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule, RouterModule],
   templateUrl: './side-menu.component.html',
   styles: `
     :host {
@@ -15,4 +15,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SideMenuComponent { }
+export class SideMenuComponent {
+  public menuItems = routes
+    .map((route) => route.children)
+    .flat()
+    .filter((route) => route && route.path && !route.path.includes(':'));
+}
