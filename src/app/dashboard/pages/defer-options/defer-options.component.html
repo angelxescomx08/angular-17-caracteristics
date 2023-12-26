@@ -1,1 +1,85 @@
-<p>defer-options works!</p>,
+<app-title title="Defer Options"></app-title>
+
+<section>
+  <h1 class="text-xl">Interacciones</h1>
+  <hr />
+  @defer (on interaction) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>on Interaction</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="h-20 w-full bg-slate-400">Click on me to load</div>
+  }
+
+  <button class="rounded bg-blue-700 px-4 py-2 my-2" #buttonInteraction>
+    Click me
+  </button>
+
+  @defer (on interaction(buttonInteraction)) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>on click</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="h-20 w-full bg-slate-400">Click the button</div>
+  }
+</section>
+
+<section>
+  <h1 class="text-xl">Inmediatamente</h1>
+  <hr />
+  @defer (on immediate) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>on immmediate</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="h-20 w-full bg-slate-400">Cargando...</div>
+  }
+</section>
+
+<section>
+  <h1 class="text-xl">Hover</h1>
+  <hr />
+  @defer (on hover) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>on hover</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="h-20 w-full bg-slate-400">Hover me!</div>
+  }
+
+  <button class="rounded bg-blue-700 px-4 py-2 my-2" #buttonHover>
+    Hover me
+  </button>
+
+  @defer (on hover(buttonHover)) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>on hover</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="h-20 w-full bg-slate-400">Hover the button</div>
+  }
+</section>
+
+<section>
+  <h1 class="text-xl">Timer</h1>
+  <hr />
+  @defer (on timer(2000)) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>on timer</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="h-20 w-full bg-slate-400">Cargando...</div>
+  }
+</section>
+
+<section>
+  <h1 class="text-xl">Multiple things</h1>
+  <hr />
+  @defer (on hover; prefetch on idle) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span>Excample of multiple</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="h-20 w-full bg-slate-400">Cargando...</div>
+  }
+</section>
