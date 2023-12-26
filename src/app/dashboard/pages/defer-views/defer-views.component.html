@@ -1,1 +1,32 @@
-<p>defer-views works!</p>,
+<app-title title="Defer views"></app-title>
+
+<section class="grid grid-cols-1">
+  @defer () {
+  <app-heavy-loaders-slow></app-heavy-loaders-slow>
+  } @placeholder {
+  <div>
+    <div
+      class="border-t-transparent border-solid animate-spin rounded-full border-blue-400 border-8 h-3 w-3"
+    ></div>
+    <p>Cargando...</p>
+  </div>
+  } @defer () {
+  <app-heavy-loaders-slow></app-heavy-loaders-slow>
+  } @placeholder {
+  <div>
+    <div
+      class="border-t-transparent border-solid animate-spin rounded-full border-blue-400 border-8 h-3 w-3"
+    ></div>
+    <p>Cargando...</p>
+  </div>
+  } @defer (on viewport) {
+  <app-heavy-loaders-slow></app-heavy-loaders-slow>
+  } @placeholder {
+  <div>
+    <div
+      class="border-t-transparent border-solid animate-spin rounded-full border-blue-400 border-8 h-3 w-3"
+    ></div>
+    <p>Cargando...</p>
+  </div>
+  }
+</section>

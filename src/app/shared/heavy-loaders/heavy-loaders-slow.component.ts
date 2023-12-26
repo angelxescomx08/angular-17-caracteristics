@@ -8,4 +8,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: `<h1>Hola mundo</h1>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeavyLoadersSlowComponent {}
+export class HeavyLoadersSlowComponent {
+  constructor() {
+    const start = Date.now();
+    while (Date.now() - start < 2000) {}
+  }
+}
