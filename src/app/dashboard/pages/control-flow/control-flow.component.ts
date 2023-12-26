@@ -13,6 +13,8 @@ type Grade = 'A' | 'B' | 'F';
 export class ControlFlowComponent {
   public showContent = signal(false);
   public grade = signal<Grade>('A');
+  public frameworks = signal<string[]>(['Angular', 'React', 'Svelte', 'Astro']);
+  public emptyList = signal<string[]>([]);
   toggleContent() {
     this.showContent.update((prev) => !prev);
   }
