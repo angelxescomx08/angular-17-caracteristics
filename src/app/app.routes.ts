@@ -57,12 +57,20 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'view-transition',
+        path: 'view-transition-1',
         title: 'View Transition',
         loadComponent: () =>
           import(
-            './dashboard/pages/view-transition/view-transition.component'
-          ).then((c) => c.ViewTransitionComponent),
+            './dashboard/pages/view-transition/view-transition1.component'
+          ).then((c) => c.ViewTransitionComponent1),
+      },
+      {
+        path: 'view-transition-2',
+        title: 'View Transition',
+        loadComponent: () =>
+          import(
+            './dashboard/pages/view-transition/view-transition2.component'
+          ).then((c) => c.ViewTransitionComponent2),
       },
       {
         path: '',
