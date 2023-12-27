@@ -1,6 +1,6 @@
 # MyDashboard
 
-Proyecto para ver las caracteristicas de angular 17.
+Proyecto para ver las caracteristicas de angular 17. Solo experimentar como funcionan.
 
 ## Instalación y ejecución
 
