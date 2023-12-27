@@ -1,1 +1,18 @@
-<p>users works!</p>,
+<app-title title="Users"></app-title>
+
+<ul class="flex flex-col gap-3">
+  @for (user of usersService.users(); track user.id) {
+  <li class="flex items-center gap-4">
+    <img
+      class="w-16 rounded shadow-md"
+      [src]="user.avatar"
+      [alt]="user.first_name"
+    />
+    <a
+      [routerLink]="['/dashboard/user/', user.id]"
+      class="text-blue-700 underline cursor-pointer"
+      >{{ user.id }} {{ user.first_name }} {{ user.last_name }}</a
+    >
+  </li>
+  }
+</ul>
